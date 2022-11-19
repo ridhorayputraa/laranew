@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,7 +68,7 @@ $blog_posts = [
 
     return view('posts', [
         'title' => 'Posts',
-        'posts' => $blog_posts
+        'posts' => Post::all()
     ]);
 });
 
