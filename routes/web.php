@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -37,31 +38,14 @@ Route::get('/about', function () {
 
 
 
-Route::get('/blog', function () {
+Route::get('/blog', [PostController::class, 'index']);
 
 
-
-    return view('posts', [
-        'title' => 'Posts',
-        'posts' => Post::all()
-    ]);
-});
-
-
-Route::get('/post/{slug}', function($slug){
-
-
-
+Route::get('/post/{slug}', [PostController::class, 'show']
 
 // cari slug yang slug nya samaa dengan parameter
-
-
-
-
-
-
-return view('post', [
-    'title' => 'single post',
-    'post' => Post::find($slug)
-]);
-});
+// return view('post', [
+//     'title' => 'single post',
+//     'post' => Post::find($slug)
+// ]);
+);
