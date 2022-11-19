@@ -35,4 +35,18 @@ class Post
                return self::$blog_posts;
         }
 
+        public static function find($slug){
+            $posts = self::$blog_posts;
+
+            $post = [];
+// filter slug
+        foreach ($posts as $p ) {
+        if($p['slug'] === $slug){
+            $post = $p;
+        }
+        }
+
+        return $post;
+                }
+
 }

@@ -40,31 +40,6 @@ Route::get('/about', function () {
 Route::get('/blog', function () {
 
 
-// Data dummy
-$blog_posts = [
-    [
-    'title' => 'Judul Post Pertama',
-    'slug' => 'judul-post-pertama',
-    'author' =>'Ridho Ray',
-    'body' => 'Lorem
-     ipsum dolor sit amet consectetur
-     adipisicing elit. Magnam esse quaerat dignissimos unde accusamus at maxime soluta consectetur tenetur temporibus pariatur dolores cum nemo asperiores est quam, voluptatibus odit veniam nulla laboriosam voluptate aliquam eligendi! Reiciendis, a culpa nisi non voluptate veritatis repudiandae provident laudantium mollitia ab, consectetur voluptatem dicta perferendis ea. Id dolore quaerat quod ea perspiciatis accusamus, sapiente totam unde corporis excepturi doloribus amet labore repudiandae nisi numquam sint consectetur impedit rem perferendis
-     quae! Hic itaque molestias fugiat?
-    '
-    ],
-
-    [
-        'title' => 'Judul Post Kedua',
-        'slug' => 'judul-post-kedua',
-        'author' =>'Nelaaaa',
-        'body' => 'Lorem
-         ipsum dolor sit amet consectetur
-         adipisicing elit. Magnam esse quaerat dignissimos unde accusamus at maxime soluta consectetur tenetur temporibus pariatur dolores cum nemo asperiores est quam, voluptatibus odit veniam nulla laboriosam voluptate aliquam eligendi! Reiciendis, a culpa nisi non voluptate veritatis repudiandae provident laudantium mollitia ab, consectetur voluptatem dicta perferendis ea. Id dolore quaerat quod ea perspiciatis accusamus, sapiente totam unde corporis excepturi doloribus amet labore repudiandae nisi numquam sint consectetur impedit rem perferendis
-         quae! Hic itaque molestias fugiat?
-        '
-        ]
-
-];
 
     return view('posts', [
         'title' => 'Posts',
@@ -76,41 +51,10 @@ $blog_posts = [
 Route::get('/post/{slug}', function($slug){
 
 
-// Data dummy
-$blog_posts = [
-    [
-    'title' => 'Judul Post Pertama',
-    'slug' => 'judul-post-pertama',
-    'author' =>'Ridho Ray',
-    'body' => 'Lorem
-     ipsum dolor sit amet consectetur
-     adipisicing elit. Magnam esse quaerat dignissimos unde accusamus at maxime soluta consectetur tenetur temporibus pariatur dolores cum nemo asperiores est quam, voluptatibus odit veniam nulla laboriosam voluptate aliquam eligendi! Reiciendis, a culpa nisi non voluptate veritatis repudiandae provident laudantium mollitia ab, consectetur voluptatem dicta perferendis ea. Id dolore quaerat quod ea perspiciatis accusamus, sapiente totam unde corporis excepturi doloribus amet labore repudiandae nisi numquam sint consectetur impedit rem perferendis
-     quae! Hic itaque molestias fugiat?
-    '
-    ],
 
-    [
-        'title' => 'Judul Post Kedua',
-        'slug' => 'judul-post-kedua',
-        'author' =>'Nelaaaa',
-        'body' => 'Lorem
-         ipsum dolor sit amet consectetur
-         adipisicing elit. Magnam esse quaerat dignissimos unde accusamus at maxime soluta consectetur tenetur temporibus pariatur dolores cum nemo asperiores est quam, voluptatibus odit veniam nulla laboriosam voluptate aliquam eligendi! Reiciendis, a culpa nisi non voluptate veritatis repudiandae provident laudantium mollitia ab, consectetur voluptatem dicta perferendis ea. Id dolore quaerat quod ea perspiciatis accusamus, sapiente totam unde corporis excepturi doloribus amet labore repudiandae nisi numquam sint consectetur impedit rem perferendis
-         quae! Hic itaque molestias fugiat?
-        '
-        ]
-
-];
 
 // cari slug yang slug nya samaa dengan parameter
-$new_post = [];
 
-// filter slug
-foreach ($blog_posts as $post ) {
-   if($post['slug'] === $slug){
-    $new_post = $post;
-   }
-}
 
 
 
@@ -118,6 +62,6 @@ foreach ($blog_posts as $post ) {
 
 return view('post', [
     'title' => 'single post',
-    'post' => $new_post
+    'post' => Post::find($slug)
 ]);
 });
