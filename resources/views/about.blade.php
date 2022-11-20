@@ -5,3 +5,4 @@
 <p>{{ $email }}</p>
 <img src="img/{{ $img }}" alt="{{ $name }}" width="200">
 @endsection
+
