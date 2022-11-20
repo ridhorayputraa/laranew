@@ -41,7 +41,8 @@ Route::get('/about', function () {
 Route::get('/blog', [PostController::class, 'index']);
 
 
-Route::get('/post/{post}', [PostController::class, 'show']
+// Kalau walcard nya hanya {post} -> dia akan mencari id
+Route::get('/post/{post:slug}', [PostController::class, 'show']
 
 // cari slug yang slug nya samaa dengan parameter
 // return view('post', [
