@@ -50,3 +50,6 @@ Route::get('/post/{post:slug}', [PostController::class, 'show']
 //     'post' => Post::find($slug)
 // ]);
 );
+
+//
+// nexttt
