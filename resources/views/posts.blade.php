@@ -11,7 +11,7 @@
     </h2>
 
         {{-- <h5>By: {{ $post->author }}</h5> --}}
-    <p>By Ridho ray in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a></p>
+    <p>By. <a href="#">{{ $post->user->name  }}</a> in <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a></p>
 
     <p>{{ $post->excerpt }}</p>
 
