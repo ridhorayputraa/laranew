@@ -3,12 +3,12 @@
 @section('container')
 <article class="mt-5">
     <h2>{{ $post->title }}</h2>
-    <p>By Ridho ray in <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a></p>
+    <p> <a class="text-decoration-none" href="#">{{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none"> {{ $post->category->name }}</a></p>
 
 {!! $post->body !!}
 
 
 </article>
 
-<a href="/blog">Back to post</a>
+<a href="/blog" class="d-block mt-5">Back to post</a>
 @endsection
