@@ -8,7 +8,7 @@
 <article class="mb-5">
     <h2>
         <a href="/post/{{ $p->slug}}">{{ $p->title }}</a></h2>
-    <h5>By: {{ $p->author }}</h5>
+    <h5>By: {{ $p->author->name }}</h5>
     <p>{{ $p->excerpt }}</p>
 </article>
 @endforeach
