@@ -67,7 +67,7 @@ return view('categories', [
 Route::get('/categories/{category:slug}', function(Category $category){
  return view('posts', [
     'title' => "Posts By :". $category->name,
-    'posts' => $category->posts,
+    'posts' => $category->posts->load('category', 'author'),
 
  ]);
 });
@@ -78,3 +78,5 @@ Route::get('/author/{author:username}', function(User $author){
         'posts' => $author->post->load('category', 'author'),
      ]);
 });
+
+// redesign ui
