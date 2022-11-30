@@ -65,16 +65,16 @@ return view('categories', [
 
 
 Route::get('/categories/{category:slug}', function(Category $category){
- return view('category', [
-    'title' => $category->name,
+ return view('posts', [
+    'title' => "Posts By :". $category->name,
     'posts' => $category->posts,
-    'category' => $category->name
+
  ]);
 });
 
 Route::get('/author/{author:username}', function(User $author){
     return view('posts', [
-        'title' =>'User Posts',
+        'title' =>'Post By Author : ' . $author->name,
         'posts' => $author->post,
      ]);
 });
