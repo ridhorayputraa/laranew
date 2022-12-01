@@ -17,7 +17,7 @@
     </div>
   </div>
 @else
-<p>Not Post Found.</p>
+<p class="text- fs-4">Not Post Found.</p>
 
 
 @endif
