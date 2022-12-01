@@ -9,11 +9,20 @@
 @if ($posts->count())
 {{-- hitung jumlah dari postingannya --}}
 <div class="card mb-3">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <img src="https://source.unsplash.com/1200x400/?{{ $posts[0]->category->name }}" class="card-img-top" alt="...">
+    <div class="card-body text-center">
+      <h5 class="card-title"><a class="text-decoration-none text-dark" href="/post/{{ $posts[0]->slug}}">{{ $posts[0]->title }}</a> </h5>
+      <p>
+        <small class="text-muted"> By. <a href="/author/{{ $posts[0]->author->username }}" class="text-decoration-none">
+        {{ $posts[0]->author->name   }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">
+             {{ $posts[0]->category->name }}</a>{{ $posts[0]->created_at->diffForHumans() }}
+        </small>
+            </p>
+
+      <p class="card-text">{{ $posts[0]->excerpt }}</p>
+
+      <a class="text-decoration-none btn btn-primary" href="/post/{{ $posts[0]->slug}}">Read More</a>
+
     </div>
   </div>
 @else
