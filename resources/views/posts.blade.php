@@ -31,6 +31,15 @@
 
 @endif
 
+{{-- Membuat sebuah card  --}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+
 
 @foreach ($posts->skip(1) as $p)
 <article class="mb-5 border-bottom pb-4">
