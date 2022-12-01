@@ -32,7 +32,7 @@
 @endif
 
 
-@foreach ($posts as $p)
+@foreach ($posts->skip(1) as $p)
 <article class="mb-5 border-bottom pb-4">
     <h2>
         <a class="text-decoration-none" href="/post/{{ $p->slug}}">{{$p->title }}</a>
