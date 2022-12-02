@@ -20,6 +20,7 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('home', [
+        'active' => 'home',
         'title' => 'Home'
     ]);
 });
@@ -28,6 +29,7 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about',[
+        'active' => 'about',
         'title' => 'About',
         'name' => "Ridho Ray",
         'email' => 'RIdhoray033@gmail.com',
@@ -58,7 +60,8 @@ Route::get('/post/{post:slug}', [PostController::class, 'show']
 
 Route::get('/categories', function(){
 return view('categories', [
-   'title' => 'Post Categories',
+    'active' => 'categories',
+   'title' => 'Categories',
    'categories' => Category::all()
 ]);
 });
@@ -66,6 +69,7 @@ return view('categories', [
 
 Route::get('/categories/{category:slug}', function(Category $category){
  return view('posts', [
+    'active' => 'categories',
     'title' => "Posts By :". $category->name,
     'posts' => $category->posts->load('category', 'author'),
 
@@ -80,4 +84,3 @@ Route::get('/author/{author:username}', function(User $author){
 });
 
 // redesign ui
- 
