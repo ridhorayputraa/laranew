@@ -41,7 +41,7 @@
 
         <div class="col-md-4">
             <div class="card" >
-                <img src="https://source.unsplash.com/1200x400/?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
+                <img src="https://source.unsplash.com/500x400/?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
                 <div class="card-body">
                   <h5 class="card-title">{{$p->title }}</h5>
                   <p>
