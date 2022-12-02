@@ -9,7 +9,7 @@
 @if ($posts->count())
 {{-- hitung jumlah dari postingannya --}}
 <div class="card mb-3">
-    <img src="https://source.unsplash.com/1200x400/?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
+    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
     <div class="card-body text-center">
       <h5 class="card-title"><a class="text-decoration-none text-dark" href="/post/{{ $posts[0]->slug}}">{{ $posts[0]->title }}</a> </h5>
 
@@ -39,9 +39,9 @@
         @foreach ($posts->skip(1) as $p )
 
 
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card" >
-                <img src="https://source.unsplash.com/500x400/?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
+                <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
                 <div class="card-body">
                   <h5 class="card-title">{{$p->title }}</h5>
                   <p>
@@ -57,23 +57,5 @@
         @endforeach
     </div>
 </div>
-
-
-@foreach ($posts->skip(1) as $p)
-<article class="mb-5 border-bottom pb-4">
-    <h2>
-        <a class="text-decoration-none" href="/post/{{ $p->slug}}">{{$p->title }}</a>
-    </h2>
-
-        {{-- <h5>By: {{ $post->author }}</h5> --}}
-    <p>By. <a href="/author/{{ $p->author->username }}" class="text-decoration-none">
-        {{ $p->author->name   }}</a> in <a class="text-decoration-none" href="/categories/{{ $p->category->slug }}"> {{ $p->category->name }}</a></p>
-
-    <p>{{ $p->excerpt }}</p>
-
-    <a class="text-decoration-none" href="/post/{{ $p->slug}}">Read More..</a>
-
-</article>
-@endforeach
 
 @endsection
