@@ -41,6 +41,11 @@
 
         <div class="col-md-4 mb-3">
             <div class="card" >
+              {{-- Label category --}}
+              <div
+               class="position-absolute px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.7) "><a
+               class="text-white text-decoration-none" href="/categories/{{ $p->category->slug}}">{{ $p->category->name }}</a>
+              </div>
                 <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
                 <div class="card-body">
                   <h5 class="card-title">{{$p->title }}</h5>
