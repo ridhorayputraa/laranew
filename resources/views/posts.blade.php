@@ -4,6 +4,8 @@
 @section('container')
 <h1 class="mb-5">{{ $title }}</h1>
 
+
+
 {{-- cek postingannya ada ga --}}
 {{-- dipakai ketika fitur pencarian --}}
 @if ($posts->count())
@@ -26,11 +28,7 @@
 
     </div>
   </div>
-@else
-<p class="text-center fs-4">Not Post Found.</p>
 
-
-@endif
 
 {{-- Membuat sebuah card  --}}
 <div class="container">
@@ -62,5 +60,12 @@
         @endforeach
     </div>
 </div>
+
+{{-- Kalo Postingannya ga ketemu --}}
+@else
+<p class="text-center fs-4">Not Post Found.</p>
+
+
+@endif
 
 @endsection
