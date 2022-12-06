@@ -5,6 +5,18 @@
 <h1 class="mb-5">{{ $title }}</h1>
 
 
+<div class="row">
+    <div class="col-md-6">
+        <form action="/posts">
+        {{-- Tambahkan input disini --}}
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search.." name="search" >
+            <button class="btn btn-danger" type="submit" >Search</button>
+          </div>
+        </form>
+    </div>
+</div>
+
 
 {{-- cek postingannya ada ga --}}
 {{-- dipakai ketika fitur pencarian --}}
