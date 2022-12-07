@@ -13,8 +13,8 @@ class PostController extends Controller
         'active' => 'posts',
         'title' => 'All Posts',
 
-        // Jika TIdak ada pencarian maka masuk kesini
 
+        // filter() dapeti dari model post hasil dari scopeFilter
         'posts' => Post::latest()->filter()->get()
     ]);
     }
