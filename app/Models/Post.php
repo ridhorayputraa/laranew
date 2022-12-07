@@ -16,14 +16,20 @@ class Post extends Model
 
 
     public function scopeFilter($query, array $filters){
-        if(isset($filters['search']) ? : false){
-            $query->where('title', 'like', '%' .  $filters['search'] . '%')
+        // if(isset($filters['search']) ? : false){
+        //     $query->where('title', 'like', '%' .  $filters['search'] . '%')
+        //     // chaining
+        //     ->orWhere('body', 'like', '%' .  $filters['search'] . '%');
+        // }
+
+        $query->when($filters['search'] ??  false, function($query, $search){
+            return    $query->where('title', 'like', '%' .  $search . '%')
             // chaining
-            ->orWhere('body', 'like', '%' .  $filters['search'] . '%');
-        }
+            ->orWhere('body', 'like', '%' .  $search . '%');
+        });
 
     }
-   
+
 
     public function category(){
         return $this->belongsTo(Category::class);
