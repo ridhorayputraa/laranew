@@ -8,6 +8,9 @@
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
         <form action="/posts">
+          @if (request('category'))
+             <input type="hidden" name="category" value="{{ request('category') }}">
+          @endif
         {{-- Tambahkan input disini --}}
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search.." name="search"
@@ -30,7 +33,7 @@
 
       <p>
         <small class="text-muted"> By. <a href="/author/{{ $posts[0]->author->username }}" class="text-decoration-none">
-        {{ $posts[0]->author->name   }}</a> in <a class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">
+        {{ $posts[0]->author->name   }}</a> in <a class="text-decoration-none" href="/posts?category={{ $posts[0]->category->slug }}">
              {{ $posts[0]->category->name }}</a>{{ $posts[0]->created_at->diffForHumans() }}
         </small>
             </p>
@@ -55,7 +58,7 @@
               {{-- Label category --}}
               <div
                class="position-absolute px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.7) "><a
-               class="text-white text-decoration-none" href="/categories/{{ $p->category->slug}}">{{ $p->category->name }}</a>
+               class="text-white text-decoration-none" href="/posts?category={{ $p->category->slug}}">{{ $p->category->name }}</a>
               </div>
                 <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
                 <div class="card-body">
