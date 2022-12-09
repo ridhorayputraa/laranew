@@ -15,7 +15,7 @@ class PostController extends Controller
 
 
         // filter() dapeti dari model post hasil dari scopeFilter
-        'posts' => Post::latest()->filter(request(['search']))->get()
+        'posts' => Post::latest()->filter(request(['search', 'category']))->get()
     ]);
     }
 
