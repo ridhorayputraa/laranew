@@ -11,6 +11,10 @@
           @if (request('category'))
              <input type="hidden" name="category" value="{{ request('category') }}">
           @endif
+
+          @if (request('author'))
+             <input type="hidden" name="author" value="{{ request('author') }}">
+          @endif
         {{-- Tambahkan input disini --}}
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search.." name="search"
@@ -32,7 +36,7 @@
       <h5 class="card-title"><a class="text-decoration-none text-dark" href="/post/{{ $posts[0]->slug}}">{{ $posts[0]->title }}</a> </h5>
 
       <p>
-        <small class="text-muted"> By. <a href="/author/{{ $posts[0]->author->username }}" class="text-decoration-none">
+        <small class="text-muted"> By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">
         {{ $posts[0]->author->name   }}</a> in <a class="text-decoration-none" href="/posts?category={{ $posts[0]->category->slug }}">
              {{ $posts[0]->category->name }}</a>{{ $posts[0]->created_at->diffForHumans() }}
         </small>
@@ -64,7 +68,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{$p->title }}</h5>
                   <p>
-                    <small class="text-muted"> By. <a href="/author/{{ $p->author->username }}" class="text-decoration-none">
+                    <small class="text-muted"> By. <a href="/posts?author={{ $p->author->username }}" class="text-decoration-none">
                     {{ $p->author->name   }}</a>{{ $p->created_at->diffForHumans() }}
                     </small>
                         </p>
