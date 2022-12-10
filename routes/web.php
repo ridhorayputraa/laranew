@@ -67,21 +67,6 @@ return view('categories', [
 });
 
 
-Route::get('/categories/{category:slug}', function(Category $category){
- return view('posts', [
-    'active' => 'categories',
-    'title' => "Posts By :". $category->name,
-    'posts' => $category->posts->load('category', 'author'),
 
- ]);
-});
-
-Route::get('/author/{author:username}', function(User $author){
-    return view('posts', [
-        'active' => 'posts',
-        'title' =>'Post By Author : ' . $author->name,
-        'posts' => $author->post->load('category', 'author'),
-     ]);
-});
 
 // redesign ui

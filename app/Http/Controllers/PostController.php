@@ -29,7 +29,9 @@ class PostController extends Controller
 
 
         // filter() dapeti dari model post hasil dari scopeFilter
-        'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get()
+        'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->
+        // Untuk klao kita di categories paginate nya akan tetap jalan
+        withQueryString()
     ]);
     }
 

@@ -8,11 +8,11 @@
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
         <form action="/posts">
-          @if (request('category'))
+          @if(request('category'))
              <input type="hidden" name="category" value="{{ request('category') }}">
           @endif
 
-          @if (request('author'))
+          @if(request('author'))
              <input type="hidden" name="author" value="{{ request('author') }}">
           @endif
         {{-- Tambahkan input disini --}}
@@ -87,5 +87,10 @@
 
 
 @endif
+
+<div class="d-flex justify-content-end">
+    {{ $posts->links() }}
+
+</div>
 
 @endsection
