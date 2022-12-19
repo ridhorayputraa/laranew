@@ -20,7 +20,8 @@ class LoginController extends Controller
             'password' => 'required',
          ]);
 
-         dd('loginn success');
+        //  Otentikasi
+
     }
 
 
