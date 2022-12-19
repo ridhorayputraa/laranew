@@ -27,6 +27,12 @@ class LoginController extends Controller
             return redirect()->intended('/dashboard');
         }
 
+        // berikan with()->flash messages
+
+        return back()->with('loginError', 'Login failed!');
+
+
+
     }
 
 
