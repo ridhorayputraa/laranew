@@ -21,8 +21,15 @@
             <form action="/login" method="post">
                 @csrf
               <div class="form-floating">
-                <input type="email" name="email" class="form-control" required id="email" autofocus placeholder="name@example.com">
+                <input type="email" name="email" class="form-control @error('email')
+                  is-invalid
+                @enderror" required id="email" autofocus placeholder="name@example.com">
                 <label for="email">Email address</label>
+                @error('email')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
               </div>
               <div class="form-floating">
                 <input type="password" name="password" class="form-control" required id="password" placeholder="Password">
