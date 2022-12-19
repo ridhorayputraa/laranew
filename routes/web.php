@@ -78,16 +78,18 @@ return view('categories', [
 
 
 // Routes Login
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+
+// name method => routes default apa bila ada routes yang ter auth
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 // logoutHandler
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
 // ROutes after login
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
