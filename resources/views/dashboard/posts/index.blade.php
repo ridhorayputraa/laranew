@@ -16,6 +16,9 @@
         </tr>
       </thead>
       <tbody>
+        @foreach ($posts as )
+
+        @endforeach
         <tr>
           <td>1,001</td>
           <td>random</td>

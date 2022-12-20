@@ -17,7 +17,10 @@ class DashboardPostController extends Controller
         //
         return view('dashboard.posts.index', [
             // hanya tampilkan kan postingan user
-           
+            // ambil berdasarkn user_id = yang terotentikasi
+
+            'posts' => Post::where('user_id', auth()->user()->id)->get()
+
         ]);
     }
 
