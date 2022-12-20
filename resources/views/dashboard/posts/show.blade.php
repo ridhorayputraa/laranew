@@ -9,7 +9,7 @@
 
     <h1 class="mb-3">{{ $post->title }}</h1>
 
-<a href="" class="btn btn-success"  ><span data-feather="arrow-left"></span> Back to all my posts</a>
+<a href="/dashboard/posts" class="btn btn-success"  ><span data-feather="arrow-left"></span> Back to all my posts</a>
 
 <a href="" class="btn btn-warning"  ><span data-feather="edit"></span>Edit</a>
 
