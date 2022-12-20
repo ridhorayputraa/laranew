@@ -91,5 +91,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 // ROutes after login
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', function(){
+   return view('dashboard.index');
+} )->middleware('auth');
 
