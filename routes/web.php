@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+
+use App\Http\Controllers\DashboardPostController;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
@@ -95,3 +96,7 @@ Route::get('/dashboard', function(){
    return view('dashboard.index');
 } )->middleware('auth');
 
+
+
+// Routes Resource for CRUD
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
