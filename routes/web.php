@@ -97,6 +97,7 @@ Route::get('/dashboard', function(){
 } )->middleware('auth');
 
 
+// Untuk fetch Slug
 
 // Routes Resource for CRUD
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');

@@ -103,4 +103,10 @@ class DashboardPostController extends Controller
     {
         //
     }
+
+
+    public function checkSlug(Request $request){
+
+    }
+
 }
