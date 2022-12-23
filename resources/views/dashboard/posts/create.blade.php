@@ -23,16 +23,24 @@
 
         </div>
 
-        <div class="mb-3">
-          <label for="category" class="form-label">Category</label>
+                <div class="mb-3">
+                  <label for="category" class="form-label">Category</label>
 
-          <select class="form-select" name="category_id">
-               @foreach ($categories as $category )
-               <option value="{{ $category->id }}">{{ $category->name }}</option>
+                  <select class="form-select" name="category_id">
+                       @foreach ($categories as $category )
+                       <option value="{{ $category->id }}">{{ $category->name }}</option>
 
-               @endforeach
-          </select>
-        </div>
+                       @endforeach
+                  </select>
+                </div>
+
+
+                <div class="mb-3">
+                  <label for="body" class="form-label">Body</label>
+                  <input id="body" type="hidden" name="body">
+                  <trix-editor input="body"></trix-editor>
+
+                </div>
 
 
         <button type="submit" class="btn btn-primary">Create Post</button>
