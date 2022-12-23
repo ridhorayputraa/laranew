@@ -19,7 +19,7 @@
 
         <div class="mb-3">
           <label for="slug" class="form-label">Slug</label>
-          <input type="text" name="slug" class="form-control" id="slug">
+          <input type="text" name="slug" class="form-control" disabled readonly id="slug">
 
         </div>
 
@@ -33,11 +33,12 @@
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
 
-    title.addEventListener('change ', function(){
-        fetch('/dashboard/posts/createSlug')
+    title.addEventListener('change', function(){
+        fetch('/dashboard/posts/checkSlug?title=' + title.value)
         .then(response => response.json())
         .then(data => slug.value = data.slug)
     })
-  </script>
+    console.log(title.value)
+    </script>
 
 @endsection
