@@ -58,6 +58,12 @@
         .then(data => slug.value = data.slug)
     })
     console.log(title.value)
+
+
+    document.addEventListener('trix-file-accept', function(e){
+        e.preventDefault();
+    })
+
     </script>
 
 @endsection

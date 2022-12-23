@@ -21,7 +21,7 @@
 
 
     <style>
-        trix-toolbar [data-trix-button-group='files-tools']{
+        trix-toolbar [data-trix-button-group='file-tools']{
             display: none;
         }
     </style>
