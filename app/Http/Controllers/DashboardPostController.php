@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 class DashboardPostController extends Controller
 {
     /**
@@ -55,6 +56,13 @@ class DashboardPostController extends Controller
             'category_id' => 'required',
             'body' => 'required'
         ]);
+
+        // Tambahkan user_id
+        $validatedData['user_id'] = auth()->user()->id;
+        // strip_tags => Untuk menghilangkan tag html yang di body
+        $validatedData['excerpt'] = Str::limit(strip_tags( $request->body), 200);
+
+        Post::create($validatedData);
 
     }
 
