@@ -25,9 +25,6 @@
 
 
 
-
-        <a href="/blog" class="d-block mt-3">Back to post</a>
-
         </div>
     </div>
 </div>
