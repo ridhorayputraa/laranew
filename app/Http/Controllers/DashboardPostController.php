@@ -92,9 +92,14 @@ class DashboardPostController extends Controller
      */
 
     //  ubah data
+    // untuk nampilin view edit
     public function edit(Post $post)
     {
         //
+        return view('dashboard.posts.edit', [
+            'post' => $post,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -105,7 +110,7 @@ class DashboardPostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  proses ubah data
+    //  proses ubah data -> edit
     public function update(Request $request, Post $post)
     {
         //
