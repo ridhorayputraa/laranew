@@ -2,13 +2,14 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Create New Post</h1>
+    <h1 class="h2">Edit Post</h1>
   </div>
 
   {{-- form --}}
   <div class="col-lg-8">
 
-      <form method="post" class="mb-5" action="/dashboard/posts">
+      <form method="post" class="mb-5" action="/dashboard/posts/{{ $post->slug }}">
+        @method('put')
         @csrf
         {{-- akan langung ke method source --}}
         <div class="mb-3">
@@ -72,7 +73,7 @@
     const slug = document.querySelector('#slug');
 
     title.addEventListener('change', function(){
-        fetch('/dasdashboard/posts/checkSlug?title=' + title.value)
+        fetch('/dashboard/posts/checkSlug?title=' + title.value)
         .then(response => response.json())
         .then(data => slug.value = data.slug)
     })
