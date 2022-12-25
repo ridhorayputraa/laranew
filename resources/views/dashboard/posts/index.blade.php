@@ -36,10 +36,10 @@
             <td>
                 <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info" ><span data-feather='eye' ></span></a>
                 <a href="" class="badge bg-warning" ><span data-feather='edit' ></span></a>
-                <form action="/dashboard/posts" method="post">
+                <form action="/dashboard/posts" class="d-inline" method="post">
                     @method('delete')
                 @csrf
-                <button  class="badge bg-danger" ><span data-feather='x-circle' ></span></button>
+                <button  class="badge bg-danger border-0" ><span data-feather='x-circle' ></span></button>
                 </form>
             </td>
           </tr>
