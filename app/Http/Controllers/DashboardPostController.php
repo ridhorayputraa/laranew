@@ -127,6 +127,11 @@ class DashboardPostController extends Controller
         }
 
         $validatedData = $request->validate($rules);
+
+        Post::where('id', $post->id)->update($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Post has been updated!');
+
     }
 
     /**
