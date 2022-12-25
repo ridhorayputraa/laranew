@@ -122,6 +122,11 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         //
+
+        // destroy untuk mengahpus data
+        Post::destroy($post->id);
+        return redirect('/dashboard/posts')->with('success', 'Post has been deleted');
+
     }
 
 
