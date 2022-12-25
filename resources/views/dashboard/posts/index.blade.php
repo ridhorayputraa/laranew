@@ -39,7 +39,7 @@
                 <form action="/dashboard/posts" class="d-inline" method="post">
                     @method('delete')
                 @csrf
-                <button  class="badge bg-danger border-0" ><span data-feather='x-circle' ></span></button>
+                <button  class="badge bg-danger border-0" onclick="return confirm('Are you sure?')" ><span data-feather='x-circle' ></span></button>
                 </form>
             </td>
           </tr>
