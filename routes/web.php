@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Models\Post;
 use App\Models\User;
@@ -102,3 +102,5 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 
 // Routes Resource for CRUD
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::resource('/dashboard/categories', AdminCategoryController::class);
