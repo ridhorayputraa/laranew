@@ -15,6 +15,7 @@ class AdminCategoryController extends Controller
     public function index()
     {
         //
+        return 'Ini adalah halaman categories';
     }
 
     /**
