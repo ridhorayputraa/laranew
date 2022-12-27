@@ -103,4 +103,5 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 // Routes Resource for CRUD
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-Route::resource('/dashboard/categories', AdminCategoryController::class);
+// Pengecualian untuk show karna tidak kepake
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');
