@@ -28,9 +28,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Paginator::useBootstrap();
+        // facades for authentice
         Gate::define('admin', function(User $user){
          return $user->username === 'ridhorayy';
-            
+
         });
     }
 }
